@@ -1,3 +1,7 @@
+/*
+	Using Sort method the time complexity of the solution is O(N logN)
+*/
+
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
