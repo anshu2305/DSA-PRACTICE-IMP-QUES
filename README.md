@@ -1,1 +1,3 @@
-# DSA-PRACTICE-IMP-QUES
+## DSA-PRACTICE-IMP-QUES
+
+Different Possible Solutions
