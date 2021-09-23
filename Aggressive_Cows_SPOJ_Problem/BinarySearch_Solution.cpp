@@ -23,7 +23,7 @@ bool canBePlaced(int A[], int n, int x)
   return false;
 }
 
-void minDist(int A[], int N, int C)
+long long minDist(int A[], int N, int C)
 {
   
   sort(A, A + N);
@@ -43,7 +43,7 @@ void minDist(int A[], int N, int C)
       high = mid - 1;
     }
   }
-  cout << pos << endl;
+  return pos;
 }
 
 int main()
@@ -54,7 +54,7 @@ int main()
     cin >> N >> C;
     for (int i = 0; i < N; i++)
     cin >> A[i];
-    solve(A, N, C);
+    cout<<minDist(A, N, C)<<endl;
   }
   return 0;
 }
