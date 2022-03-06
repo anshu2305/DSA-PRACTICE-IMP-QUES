@@ -6,6 +6,7 @@ public:
             return 0;
         }
         grid[i][j]= '0';
+        // inorder to avoid confusion mark all the visiting ones to zero and then check for its adjacents
         dfs(i+1,j,grid);
         dfs(i-1,j,grid);
         dfs(i,j+1,grid);
