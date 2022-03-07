@@ -6,7 +6,6 @@ public:
     bool isSafeNode(vector<vector<int>>& graph, int node, vector<bool>& visited) {
         if(terminal_nodes.count(node)) return true;
         
-        bool issafe = true;
         if(visited[node] && terminal_nodes.count(node)==0) {
             return false;
         }
@@ -14,13 +13,11 @@ public:
         visited[node] = true;
         for(int i:graph[node]) {
             if(!isSafeNode(graph,i,visited)) {
-                issafe = false;
-                break;
+                return false;
             }
         }
-        if(issafe)
-            terminal_nodes.insert(node);
-        return issafe;
+        terminal_nodes.insert(node);
+        return true;
     }
     
     vector<int> eventualSafeNodes(vector<vector<int>>& graph) {
