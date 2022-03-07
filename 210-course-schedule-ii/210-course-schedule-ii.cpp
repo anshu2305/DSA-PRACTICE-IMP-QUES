@@ -11,6 +11,7 @@ public:
         
         for(int i=0;i<prerequisites.size();i++)
         {
+            //b1 should be done before a1 so edge from b1 to a1 should be established
             adj[prerequisites[i][1]].push_back(prerequisites[i][0]);
         }
         
@@ -23,9 +24,11 @@ public:
             if(indegree[i]==0)
                 q.push(i);
         }
-        
+        //if there is no node with indegree 0 then it is definitely cyclic 
+        //but it should be acyclic inoder to get finished
         if(q.empty()==true)
-            return ans;
+            return ans; 
+        
         
         while(!q.empty()){
             int node = q.front();
@@ -37,6 +40,7 @@ public:
                     q.push(ad);
             }
         }
+        // toposort elems should be equal to total nums
         if(ans.size()==num)
             return ans;
         
